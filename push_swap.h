@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:38:19 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/09 10:33:18 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/11 12:51:23 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 
 typedef struct s_stack
 {
     int val;
     struct s_stack *next;
 }t_stack;
+
 size_t	ft_strlen(const char *s);
 void	push(t_stack **a, int val);
 void	swap(t_stack **a, char c);
@@ -44,7 +46,11 @@ int		stack_is_empty(t_stack *a);
 int		stack_len(t_stack *a);
 int		ft_atoi(const char *str);
 int		is_descending(t_stack *a);
+int     is_sorted(t_stack *a);
 char	**ft_split(char const *s, char c);
-
-
+int get_max(t_stack *a);
+int stack_min(t_stack *a);
+void sort(t_stack **a, t_stack **b);
+int get_min(t_stack *a);
+void sort_five(t_stack **a, t_stack **b);
 #endif

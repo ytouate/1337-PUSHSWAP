@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:49:40 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/08 13:53:54 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/09 15:46:54 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	push(t_stack **a, int val)
 	temp -> val = val;
 	if (!temp)
 		return ;
+
 	temp -> next = *a;
 	*a = temp;
 }

@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:48:51 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/08 13:49:13 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/10 15:19:41 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,21 @@ void	swap_a_b(t_stack **a, t_stack **b)
 void	rotate(t_stack	**a, char c)
 {
 	t_stack	*p;
+	t_stack *head;
+	t_stack *q;
 
+	head = *a;
+	*a = (*a)->next;
 	p = *a;
-	if (!*a)
-		return ;
-	while ((*a)-> next)
+	int val = pop(&head);
+	while (p->next)
 	{
-		*a = (*a)->next;
+		p = p ->next;
 	}
-	(*a)->next = p;
-	p -> next = NULL;
-	pop(a);
+	q = malloc(sizeof(t_stack));
+	q ->val = val;
+	p->next = q;
+	(q) ->next = NULL;
 	if (c == 'a')
 		write(1, "ra\n", 3);;
 	if (c == 'b')
@@ -99,11 +103,11 @@ void	reverse_rotate(t_stack **a, char c)
 	p -> next = *a;
 	*a = p;
 	if (c == 'a')
-		write(1, "ra\n", 3);
+		write(1, "rra\n", 4);
 	else if (c == 'r')
 		return ;
 	else
-		write(1, "rb\n", 3);
+		write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack **a, t_stack **b)

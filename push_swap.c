@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/09 10:32:34 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/13 17:11:50 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,20 +93,6 @@ int is_descending(t_stack *a)
 	return (1);
 }
 
-int get_min(t_stack *a)
-{
-	int min;
-	while (a)
-	{
-		if (stack_top(a) < min)
-		{
-			min = stack_top(a);
-		}
-		a = a->next;
-	}
-	return min;
-}
-
 int	main(int ac, char **av)
 {
 	t_stack	*a;
@@ -118,20 +104,10 @@ int	main(int ac, char **av)
 	b = NULL;
 	check_args(av);
 	fill_stack(ac, av, &a);
-	if (is_sorted(a) == 1)
-	{
-		write(1, "Stack already sorted\n", 21);
-		exit(EXIT_SUCCESS);
-	}
-	int i;
-	i = 0;
-	while (i < 2)
-	{
-		reverse_rotate(&a, 'a');
-		i++;
-	}
-	sort_three_ints(&a, 'a');
-	if (is_descending(a))
-		sort_descending(&a, &b);
+	if (stack_len(a) == 3)
+		sort_three_ints(&a, 'a');
+	if (stack_len(a) == 5)
+		sort_five(&a, &b);
 	display_stack(a);
+	
 }
