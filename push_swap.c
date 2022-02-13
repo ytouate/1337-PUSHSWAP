@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/13 17:11:50 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/13 17:23:55 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	display_stack(t_stack *a)
 {
 	if (!a)
 		return ;
+		
 	while (a)
 	{
 		printf("%d\n", a->val);
