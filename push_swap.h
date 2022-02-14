@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:38:19 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/11 12:51:23 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/14 09:41:12 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	rrr(t_stack **a, t_stack **b);
 void	display_stack(t_stack *a);
 void	check_dup(int *arr, int size, int val);
 void	sort_descending(t_stack **a, t_stack **b);
-void	check_args(char **av);
+void	check_args(int ac, char **av);
 void	sort_three_ints(t_stack **a, char c);
 void	insert(t_stack **a, t_stack **b, char c);
 int		pop(t_stack **a);

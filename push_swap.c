@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/13 17:23:55 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/14 11:34:53 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,23 @@ void	display_stack(t_stack *a)
 	}
 }
 
-void	fill_stack(int ac, char **av, t_stack **a)
+void	fill_stack(int ac, char **av, t_stack **a, char c)
 {
 	int i;
 	int *save;
 	int j;
-
+	if (c == 'a')
+		c = 0;
+	else
+		c = 1;
 	save = malloc(sizeof(int) * ac);
 	i = 0;
 	j = 0;
 	while (ac-- > 1)
 	{
-		check_dup(save, j, ft_atoi(av[ac]));
-		push(a, ft_atoi(av[ac]));
-		save[i++] = ft_atoi(av[ac]);
+		check_dup(save, j, ft_atoi(av[ac - c]));
+		push(a, ft_atoi(av[ac - c]));
+		save[i++] = ft_atoi(av[ac - c]);
 		j++;
 	}
 	free(save);
@@ -94,21 +97,54 @@ int is_descending(t_stack *a)
 	return (1);
 }
 
+int count(char **av)
+{
+	int i;
+	int j;
+	int len;
+	i = -1;
+	len = 0;
+
+	while (av[++i])
+	{
+		j = -1;
+		while (av[i][++j])
+			if ((av[i][j] >= '0' && av[i][j] <= '9') && (av[i][j + 1] < '0' || av[i][j + 1] > '9'))
+				len++;
+	}
+	return len;
+}
+
+void check_cases(t_stack **a, t_stack **b)
+{
+	if (!is_sorted(*a))
+	{
+		if (stack_len(*a) == 3)
+			sort_three_ints(a, 'a');
+		if (stack_len(*a) == 5)
+			sort_five(a, b);
+	}
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
+	char **argv;
 
-	if (ac <= 1)
-		return (0);
 	a = NULL;
 	b = NULL;
-	check_args(av);
-	fill_stack(ac, av, &a);
-	if (stack_len(a) == 3)
-		sort_three_ints(&a, 'a');
-	if (stack_len(a) == 5)
-		sort_five(&a, &b);
+	if (ac == 2)
+	{
+		argv = ft_split(av[1], ' ');
+		check_args(count(argv), argv);
+		fill_stack(count(argv) + 1, argv, &a, 'b');
+	}
+	else
+	{
+		check_args(ac, av);
+		fill_stack(ac, av, &a, 'a');
+	}
+	check_cases(&a, &b);
 	display_stack(a);
-	
 }

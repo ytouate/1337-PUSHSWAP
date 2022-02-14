@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:51:15 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/08 13:52:05 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/14 11:23:03 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ void	check_overflow(char **av, int i)
 	}
 }
 
-void	check_args(char **av)
+void	check_args(int ac, char **av)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
+	if (ac <= 1)
+		return ;
 	while (av[++i])
 	{
 		check_overflow(av, i);
