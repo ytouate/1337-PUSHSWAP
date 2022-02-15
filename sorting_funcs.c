@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:47:39 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/12 19:07:16 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/15 20:44:24 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,27 +54,49 @@ void sort_three_ints(t_stack **a, char c)
 	}
 }
 
+int ft_min(t_stack *a)
+{
+	int min;
+	t_stack *p;
+
+	p = a;
+	min = a->val;
+	while (a)
+	{
+		if (a->val < min)
+			min = a->val;
+		a = a->next;		
+	}
+	return get_index(p, min);
+}
+
 void sort_five(t_stack **a, t_stack **b)
 {
 	int min;
-	int i;
-
-	i = 0;
-	while (i < 2)
+	int mid;
+	int count;
+	while (*a)
 	{
-		min = get_min(*a);
-		while (--min)
+		mid = stack_len(*a) / 2;
+		min = get_index(*a, get_min(*a));
+		if (min > mid + 1)
 		{
-			rotate(a, 'a');
+			count = min - stack_len(*a) + 2;
+			while (--count)
+				reverse_rotate(a, 'a');
+			insert(b, a, 'b');
 		}
-		insert(b, a, 'b');
-		i++;
+		else
+		{
+			while (--min)
+				rotate(a, 'a');
+			insert(b, a, 'b');
+		}
 	}
-	sort_three_ints(a, 'a');
-	insert(a, b, 'a');
-	insert(a, b, 'a');
-	
+	while (*b)
+		insert(a, b, 'b');
 }
+
 int get_index(t_stack *a, int val)
 {
 	int i;
@@ -102,7 +124,7 @@ int get_min(t_stack *a)
 			min = a->val;
 		a = a->next;		
 	}
-	return get_index(p, min);
+	return min;
 }
 
 int get_max(t_stack *a)

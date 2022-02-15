@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/14 11:34:53 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/15 20:34:51 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	stack_len(t_stack *a)
 {
 	int	len;
 
-	if (!a->val || !a)
+	if (!a)
 		return (0);
 	len = 0;
 	while (a)
@@ -121,7 +121,7 @@ void check_cases(t_stack **a, t_stack **b)
 	{
 		if (stack_len(*a) == 3)
 			sort_three_ints(a, 'a');
-		if (stack_len(*a) == 5)
+		if (stack_len(*a) == 5)	
 			sort_five(a, b);
 	}
 }
@@ -137,12 +137,12 @@ int	main(int ac, char **av)
 	if (ac == 2)
 	{
 		argv = ft_split(av[1], ' ');
-		check_args(count(argv), argv);
+		check_args(count(argv) + 1, argv, 'b');
 		fill_stack(count(argv) + 1, argv, &a, 'b');
 	}
 	else
 	{
-		check_args(ac, av);
+		check_args(ac, av, 'a');
 		fill_stack(ac, av, &a, 'a');
 	}
 	check_cases(&a, &b);

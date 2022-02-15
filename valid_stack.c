@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:51:15 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/14 11:23:03 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/15 20:39:43 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,26 @@ void	check_overflow(char **av, int i)
 	}
 }
 
-void	check_args(int ac, char **av)
+void	check_args(int ac, char **av, char c)
 {
 	int	i;
 	int	j;
 
-	i = 0;
+	if (c == 'a')
+		i = 0;
+	else
+		i = -1;
 	j = 0;
 	if (ac <= 1)
 		return ;
+	
 	while (av[++i])
 	{
 		check_overflow(av, i);
 		j = 0;
 		if (av[i][0] == '-' && (av[i][1] >= '0' && av[i][1] <= '9'))
 			j++;
+		
 		while (av[i][j])
 		{
 			if (av[i][j] >= '0' && av[i][j] <= '9')
@@ -57,7 +62,6 @@ void check_dup(int *arr, int size, int val)
 	{
 		if (arr[i] == val)
 		{
-
 			write(1, "Error\n", 7);
 			exit(EXIT_FAILURE);
 		}
