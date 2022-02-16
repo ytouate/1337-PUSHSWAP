@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:38:19 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/15 20:45:17 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/16 10:58:12 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_stack
 {
     int val;
+    int index;
     struct s_stack *next;
 }t_stack;
 
@@ -54,6 +55,7 @@ int		get_min(t_stack *a);
 int		get_max(t_stack *a);
 int		stack_min(t_stack *a);
 int		get_index(t_stack *a, int val);
+int* inesrt_array(t_stack *a);
 char	**ft_split(char const *s, char c);
 
 

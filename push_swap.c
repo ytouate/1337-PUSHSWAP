@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/15 20:34:51 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/16 11:18:09 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,89 @@ void check_cases(t_stack **a, t_stack **b)
 	}
 }
 
+void change(int *x, int *y)
+{
+	int temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
+
+void bubble_sort(int *arr, int size)
+{
+	int i;
+	int j;
+	int flag;
+
+	flag = 1;
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				change(&arr[j], &arr[j + 1]);
+				flag = 0;
+			}
+			j++;
+		}
+		if (flag == 1)
+			return ;
+		i++;
+	}
+}
+
+int* inesrt_array(t_stack *a)
+{
+	int *arr;
+	int	i;
+	int len;
+	
+	i = 0;
+	len = stack_len(a);
+	arr = malloc(len * sizeof(int));
+	if (!arr)
+		return 0;
+	while (i < len)
+	{
+		arr[i++] = a->val;
+		a = a-> next;
+	}
+	bubble_sort(arr, len);
+	return (arr);
+}
+
+int search(int *arr, int val, int size)
+{
+	int i;
+	i = 0;
+	while (i <= size)
+	{
+		if (val == arr[i])
+			return i - 1;
+		i++;
+	}
+	return INT_MIN;
+}
+
+void index_element(t_stack *a)
+{
+	int i;
+	int len;
+	int *arr;
+
+	arr = inesrt_array(a);
+	i = 0;
+	len = stack_len(a);
+	while (a)
+	{
+		(a) -> index = search(arr, (a)->val, len);
+		a = (a) -> next;
+	}
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	*a;
@@ -146,5 +229,11 @@ int	main(int ac, char **av)
 		fill_stack(ac, av, &a, 'a');
 	}
 	check_cases(&a, &b);
-	display_stack(a);
+	index_element(a);
+	while (a)
+	{
+		printf("the index of %d is === %d\n", a->val,  a->index);
+		a = a->next;
+	}
+	//display_stack(a);
 }
