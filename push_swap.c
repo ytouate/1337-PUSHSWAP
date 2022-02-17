@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/16 11:18:09 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/17 14:23:27 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -220,6 +220,8 @@ int	main(int ac, char **av)
 	if (ac == 2)
 	{
 		argv = ft_split(av[1], ' ');
+		printf("%s\n", argv[0]);
+		printf("%d\n", count(argv));
 		check_args(count(argv) + 1, argv, 'b');
 		fill_stack(count(argv) + 1, argv, &a, 'b');
 	}
@@ -229,11 +231,4 @@ int	main(int ac, char **av)
 		fill_stack(ac, av, &a, 'a');
 	}
 	check_cases(&a, &b);
-	index_element(a);
-	while (a)
-	{
-		printf("the index of %d is === %d\n", a->val,  a->index);
-		a = a->next;
-	}
-	//display_stack(a);
 }

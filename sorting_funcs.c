@@ -6,20 +6,11 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:47:39 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/15 20:44:24 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/17 14:12:27 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void sort_descending(t_stack **a, t_stack **b)
-{
-	while (*a)
-	{
-		insert(b, a, 'b');
-	}
-	*a = *b;
-}
 
 void sort_three_ints(t_stack **a, char c)
 {
@@ -74,35 +65,44 @@ void sort_five(t_stack **a, t_stack **b)
 {
 	int min;
 	int mid;
+	int len;
 	int count;
-	while (*a)
+	len = stack_len(*a);
+	while (len > 3)
 	{
 		mid = stack_len(*a) / 2;
 		min = get_index(*a, get_min(*a));
-		if (min > mid + 1)
+		if (min <= mid)
 		{
-			count = min - stack_len(*a) + 2;
-			while (--count)
-				reverse_rotate(a, 'a');
+			count = min;
+			while (count--)
+				rotate(a, 'a');
 			insert(b, a, 'b');
+			len--;
 		}
 		else
 		{
-			while (--min)
-				rotate(a, 'a');
+			count = stack_len(*a) - min;
+			while (count--)
+				reverse_rotate(a, 'a');
 			insert(b, a, 'b');
+			len--;
 		}
 	}
+	sort_three_ints(a, 'a');
 	while (*b)
-		insert(a, b, 'b');
+		insert(a, b, 'a');
 }
 
 int get_index(t_stack *a, int val)
 {
+
+	
 	int i;
-	i = 1;
+	i = 0;
 	while (a)
 	{
+
 		if (a->val == val)
 			return i;
 		i++;
@@ -127,18 +127,32 @@ int get_min(t_stack *a)
 	return min;
 }
 
-int get_max(t_stack *a)
+int n_exist(int *arr, int start, int end, int val)
 {
-	int max;
-	t_stack *p;
-
-	p = a;
-	max = a->val;
-	while (a)
+	int i;
+	i = 0;
+	while (i < size)
 	{
-		if (a->val > max)
-			max = a->val;
-		a = a->next;		
+		if (arr[i] == val)
+			return (1);
+		i++;
 	}
-	return get_index(p, max);
+	return (0);
 }
+int search_en
+// void sort(t_stack **a, t_stack **b)
+// {
+// 	//int min;
+// 	int to_push;
+// 	int *arr;
+// 	int i;
+// 	if (!b)
+// 		printf("b is empty\n");
+// 	i = 0;
+// 	arr = inesrt_array(*a);
+// 	while (*a)
+// 	{
+// 		to_push = stack_len(*a) / 5 + 1;
+		
+// 	}
+// }
