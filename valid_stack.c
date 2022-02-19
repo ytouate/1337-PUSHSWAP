@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:51:15 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/15 20:39:43 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/19 15:48:09 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void check_dup(int *arr, int size, int val)
 	{
 		if (arr[i] == val)
 		{
-			write(1, "Error\n", 7);
+			write(2, "Error\n", 7);
 			exit(EXIT_FAILURE);
 		}
 		i++;

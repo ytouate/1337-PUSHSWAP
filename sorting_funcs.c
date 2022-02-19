@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:47:39 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/17 14:12:27 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/19 18:36:38 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,6 @@ void sort_three_ints(t_stack **a, char c)
 		swap(a, c);
 		reverse_rotate(a, c);
 	}
-}
-
-int ft_min(t_stack *a)
-{
-	int min;
-	t_stack *p;
-
-	p = a;
-	min = a->val;
-	while (a)
-	{
-		if (a->val < min)
-			min = a->val;
-		a = a->next;		
-	}
-	return get_index(p, min);
 }
 
 void sort_five(t_stack **a, t_stack **b)
@@ -127,7 +111,23 @@ int get_min(t_stack *a)
 	return min;
 }
 
-int n_exist(int *arr, int start, int end, int val)
+int get_max(t_stack *a)
+{
+	int max;
+	t_stack *p;
+
+	p = a;
+	max = a->val;
+	while (a)
+	{
+		if (a->val > max)
+			max = a->val;
+		a = a->next;		
+	}
+	return max;
+}
+
+int n_exist(int *arr, int size, int val)
 {
 	int i;
 	i = 0;
@@ -139,20 +139,60 @@ int n_exist(int *arr, int start, int end, int val)
 	}
 	return (0);
 }
-int search_en
-// void sort(t_stack **a, t_stack **b)
-// {
-// 	//int min;
-// 	int to_push;
-// 	int *arr;
-// 	int i;
-// 	if (!b)
-// 		printf("b is empty\n");
-// 	i = 0;
-// 	arr = inesrt_array(*a);
-// 	while (*a)
-// 	{
-// 		to_push = stack_len(*a) / 5 + 1;
-		
-// 	}
-// }
+
+void sort(t_stack **a, t_stack **b)
+{
+	int		*sorted_array;
+	int		p;
+	int		end;
+	int		j;
+	int		len;
+	len	= stack_len(*a);
+	end	= 0;
+	j	= 0;
+	sorted_array = insert_array(*a);
+	while (*a && len > 0)
+	{
+		p = stack_len(*a) / 3 + 1;
+		end += p;
+		j = p;
+		while (*a != NULL && j)
+		{
+			if (n_exist(sorted_array, end, (*a)->val))
+			{
+				insert(b, a, 'b');
+				j--;
+				len--;
+			}
+			else
+			{
+				rotate(a, 'a');
+			}
+		}
+	}
+	p = 0;
+	j = 0;
+	while (*b)
+	{
+		p = get_index(*b, get_max(*b));
+		if (p <= stack_len(*b) / 2)
+		{
+			j = p;
+			while (j > 0)
+			{
+				rotate(b, 'b');
+				j--;
+			}
+			insert(a, b, 'a');
+		}
+		else
+		{
+			j = stack_len(*b) - p + 1;
+			while (--j > 0)
+			{
+				reverse_rotate(b, 'b');
+			}
+			insert(a, b, 'a');
+		}
+	}
+}

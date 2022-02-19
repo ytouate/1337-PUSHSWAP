@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/17 14:23:27 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/19 18:22:44 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,23 +80,6 @@ int	is_sorted(t_stack *a)
 	return (1);
 }
 
-int is_descending(t_stack *a)
-{
-	t_stack	*p;
-	while (a)
-	{
-		p = a;
-		while (p->next)
-		{
-			if (p->val < p->next->val)
-				return (0);
-			p = p ->next;
-		}
-		a = a->next;
-	}
-	return (1);
-}
-
 int count(char **av)
 {
 	int i;
@@ -123,6 +106,8 @@ void check_cases(t_stack **a, t_stack **b)
 			sort_three_ints(a, 'a');
 		if (stack_len(*a) == 5)	
 			sort_five(a, b);
+		else
+			sort(a, b);
 	}
 }
 
@@ -142,10 +127,10 @@ void bubble_sort(int *arr, int size)
 
 	flag = 1;
 	i = 0;
-	while (i < size)
+	while (i < size - 1)
 	{
 		j = 0;
-		while (j < size)
+		while (j < size - 1)
 		{
 			if (arr[j] > arr[j + 1])
 			{
@@ -160,7 +145,7 @@ void bubble_sort(int *arr, int size)
 	}
 }
 
-int* inesrt_array(t_stack *a)
+int* insert_array(t_stack *a)
 {
 	int *arr;
 	int	i;
@@ -199,7 +184,7 @@ void index_element(t_stack *a)
 	int len;
 	int *arr;
 
-	arr = inesrt_array(a);
+	arr = insert_array(a);
 	i = 0;
 	len = stack_len(a);
 	while (a)

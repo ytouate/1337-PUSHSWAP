@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:48:51 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/10 15:19:41 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/19 16:06:57 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	swap(t_stack **a, char c)
 		write(1, "sb\n", 3);
 }
 
-void	insert(t_stack **a, t_stack **b, char c)
+void	insert(t_stack **a, t_stack **b, const char c)
 {
 	int	x;
 
@@ -43,7 +43,10 @@ void	insert(t_stack **a, t_stack **b, char c)
 	pop(b);
 	push(a, x);
 	if (c == 'a')
+	{
 		write(1, "pa\n", 3);
+	}
+		
 	else
 		write(1, "pb\n", 3);
 }
