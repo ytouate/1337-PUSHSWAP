@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:47:39 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/19 18:36:38 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/19 18:56:31 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,7 @@ int n_exist(int *arr, int size, int val)
 	return (0);
 }
 
-void sort(t_stack **a, t_stack **b)
+void sort(t_stack **a, t_stack **b, const char c)
 {
 	int		*sorted_array;
 	int		p;
@@ -153,7 +153,10 @@ void sort(t_stack **a, t_stack **b)
 	sorted_array = insert_array(*a);
 	while (*a && len > 0)
 	{
-		p = stack_len(*a) / 3 + 1;
+		if (c == 'a')
+			p = stack_len(*a) / 10 + 1;
+		else
+			p = stack_len(*a) / 3 + 1;
 		end += p;
 		j = p;
 		while (*a != NULL && j)

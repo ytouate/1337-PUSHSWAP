@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:38:19 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/19 17:46:51 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/19 18:50:39 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ int		stack_min(t_stack *a);
 int		get_index(t_stack *a, int val);
 int* insert_array(t_stack *a);
 char	**ft_split(char const *s, char c);
-void sort(t_stack **a, t_stack **b);
+void sort(t_stack **a, t_stack **b, const char c);
 
 #endif

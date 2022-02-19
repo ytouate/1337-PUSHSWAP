@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/19 18:22:44 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/19 18:50:54 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,10 @@ void check_cases(t_stack **a, t_stack **b)
 			sort_three_ints(a, 'a');
 		if (stack_len(*a) == 5)	
 			sort_five(a, b);
+		if (stack_len(*a) < 250)
+			sort(a, b, 'b');
 		else
-			sort(a, b);
+			sort(a, b, 'a');
 	}
 }
 
