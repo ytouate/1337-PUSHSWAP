@@ -6,24 +6,15 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:47:39 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/19 18:56:31 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/19 20:57:08 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort_three_ints(t_stack **a, char c)
+void	sort_three_ints(t_stack **a, char c)
 {
-	int	first;
-	int	second;
-	int	third;
-
-	first = (*a)->val;
-	second = (*a)->next->val;
-	third = (*a)->next->next->val;
-	if (is_sorted(*a) == 1)
-		return ;
-	if (first > second && second < third)
+	if ((*a)->val > (*a)->next->val && (*a)->next->val < (*a)->next->next->val)
 	{
 		rotate(a, c);
 		if (!is_sorted(*a))
@@ -32,7 +23,8 @@ void sort_three_ints(t_stack **a, char c)
 			swap(a, c);
 		}
 	}
-	else if (first < second && second > third)
+	else if ((*a)->val < (*a)->next->val
+		&& (*a)->next->val > (*a)->next->next->val)
 	{
 		reverse_rotate(a, c);
 		if (!is_sorted(*a))
@@ -45,24 +37,21 @@ void sort_three_ints(t_stack **a, char c)
 	}
 }
 
-void sort_five(t_stack **a, t_stack **b)
+void	sort_five(t_stack **a, t_stack **b)
 {
-	int min;
-	int mid;
-	int len;
-	int count;
-	len = stack_len(*a);
-	while (len > 3)
+	int	min;
+	int	mid;
+	int	count;
+
+	while (stack_len(*a) > 3)
 	{
 		mid = stack_len(*a) / 2;
 		min = get_index(*a, get_min(*a));
 		if (min <= mid)
 		{
-			count = min;
-			while (count--)
+			while (min--)
 				rotate(a, 'a');
 			insert(b, a, 'b');
-			len--;
 		}
 		else
 		{
@@ -70,7 +59,6 @@ void sort_five(t_stack **a, t_stack **b)
 			while (count--)
 				reverse_rotate(a, 'a');
 			insert(b, a, 'b');
-			len--;
 		}
 	}
 	sort_three_ints(a, 'a');
@@ -78,27 +66,25 @@ void sort_five(t_stack **a, t_stack **b)
 		insert(a, b, 'a');
 }
 
-int get_index(t_stack *a, int val)
+int	get_index(t_stack *a, int val)
 {
+	int	i;
 
-	
-	int i;
 	i = 0;
 	while (a)
 	{
-
 		if (a->val == val)
-			return i;
+			return (i);
 		i++;
-		a = a->next; 
+		a = a-> next;
 	}
-	return i;
+	return (i);
 }
 
-int get_min(t_stack *a)
+int	get_min(t_stack *a)
 {
-	int min;
-	t_stack *p;
+	int		min;
+	t_stack	*p;
 
 	p = a;
 	min = a->val;
@@ -106,9 +92,9 @@ int get_min(t_stack *a)
 	{
 		if (a->val < min)
 			min = a->val;
-		a = a->next;		
+		a = a-> next;		
 	}
-	return min;
+	return (min);
 }
 
 int get_max(t_stack *a)
@@ -127,9 +113,10 @@ int get_max(t_stack *a)
 	return max;
 }
 
-int n_exist(int *arr, int size, int val)
+int	n_exist(int *arr, int size, int val)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (i < size)
 	{
@@ -140,13 +127,14 @@ int n_exist(int *arr, int size, int val)
 	return (0);
 }
 
-void sort(t_stack **a, t_stack **b, const char c)
+void	sort(t_stack **a, t_stack **b, const char c)
 {
 	int		*sorted_array;
 	int		p;
 	int		end;
 	int		j;
 	int		len;
+
 	len	= stack_len(*a);
 	end	= 0;
 	j	= 0;
@@ -168,9 +156,7 @@ void sort(t_stack **a, t_stack **b, const char c)
 				len--;
 			}
 			else
-			{
 				rotate(a, 'a');
-			}
 		}
 	}
 	p = 0;
@@ -192,9 +178,7 @@ void sort(t_stack **a, t_stack **b, const char c)
 		{
 			j = stack_len(*b) - p + 1;
 			while (--j > 0)
-			{
 				reverse_rotate(b, 'b');
-			}
 			insert(a, b, 'a');
 		}
 	}

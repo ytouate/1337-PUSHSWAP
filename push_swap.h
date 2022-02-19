@@ -6,23 +6,24 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:38:19 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/19 18:50:39 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/19 20:39:17 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
-#include <signal.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <limits.h>
+# include <signal.h>
+
 typedef struct s_stack
 {
-    int val;
-    int index;
-    struct s_stack *next;
+	int				val;
+	int				index;
+	struct s_stack	*next;
 }t_stack;
 
 size_t	ft_strlen(const char *s);
@@ -39,21 +40,17 @@ void	check_dup(int *arr, int size, int val);
 void	sort_three_ints(t_stack **a, char c);
 void	insert(t_stack **a, t_stack **b, char c);
 void	sort_five(t_stack **a, t_stack **b);
-void	check_args(int ac, char **av, char c);
+void	check_args(int ac, char **av);
+void	sort(t_stack **a, t_stack **b, const char c);
+int		*insert_array(t_stack *a);
 int		pop(t_stack **a);
-int		peek(t_stack *a, int pos);
-int		stack_top(t_stack *a);
 int		stack_is_empty(t_stack *a);
 int		stack_len(t_stack *a);
 int		ft_atoi(const char *str);
-int		is_descending(t_stack *a);
 int		is_sorted(t_stack *a);
 int		get_min(t_stack *a);
 int		get_max(t_stack *a);
 int		stack_min(t_stack *a);
 int		get_index(t_stack *a, int val);
-int* insert_array(t_stack *a);
-char	**ft_split(char const *s, char c);
-void sort(t_stack **a, t_stack **b, const char c);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:49:40 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/16 14:05:43 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/19 20:48:55 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	push(t_stack **a, int val)
 	temp -> val = val;
 	if (!temp)
 		return ;
-
 	temp -> next = *a;
 	*a = temp;
 }
@@ -39,21 +38,6 @@ int	pop(t_stack **a)
 	temp -> next = NULL;
 	free(temp);
 	return (x);
-}
-
-int	peek(t_stack *a, int pos)
-{
-	int	i;
-
-	i = 0;
-	while (i < pos - 1 && a)
-	{
-		a = a -> next;
-		i++;
-	}
-	if (a)
-		return (a->val);
-	return (-1);
 }
 
 int	stack_top(t_stack *a)
