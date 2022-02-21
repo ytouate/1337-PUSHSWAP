@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 12:31:50 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 14:08:06 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 14:37:57 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	check_instraction(char *instra)
 	}
 	else
 	{
-		write(1, "Error\n", 7);
+		write(1, "Error\n", 6);
 		exit(EXIT_FAILURE);
 	}
 }

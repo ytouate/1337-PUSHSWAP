@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:47:39 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 10:26:27 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 14:50:54 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ void	sort(t_stack **a, t_stack **b, const char c)
 	while (*a && stack_len(*a) > 0)
 	{
 		if (c == 'a')
-			p = stack_len(*a) / 10 + 1;
+			p = stack_len(*a) / 6 + 1;
 		else
 			p = stack_len(*a) / 3 + 1;
 		end += p;

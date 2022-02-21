@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:51:15 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 14:15:36 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 14:38:21 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	check_overflow(char **av, int i)
 {
 	if ((ft_atoi(av[i]) == -1 || ft_atoi(av[i]) == 0) && ft_strlen(av[i]) >= 10)
 	{
-		write(2, "Error\n", 7);
+		write(2, "Error\n", 6);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -27,7 +27,7 @@ int	loop(char c)
 		return (1);
 	else
 	{
-		write(2, "Error\n", 7);
+		write(2, "Error\n", 6);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -45,7 +45,7 @@ void	check_args(int ac, char **av)
 	{
 		if (ft_strcmp(av[i], ""))
 		{
-			write(2, "Error\n", 7);
+			write(2, "Error\n", 6);
 			exit(EXIT_FAILURE);
 		}
 		check_overflow(av, i);
@@ -69,7 +69,7 @@ void	check_dup(int *arr, int size, int val)
 	{
 		if (arr[i] == val)
 		{
-			write(2, "Error\n", 7);
+			write(2, "Error\n", 6);
 			exit(EXIT_FAILURE);
 		}
 		i++;
