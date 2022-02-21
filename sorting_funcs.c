@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:47:39 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 14:50:54 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 19:40:13 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	n_exist(int *arr, int size, int val)
 	return (0);
 }
 
-void	push_back(t_stack **a, t_stack **b)
+void	push_back(t_stack **a, t_stack **b, int *sorted_array)
 {
 	int	p;
 	int	j;
@@ -107,6 +107,7 @@ void	push_back(t_stack **a, t_stack **b)
 			insert(a, b, 'a');
 		}
 	}
+	free(sorted_array);
 }
 
 void	sort(t_stack **a, t_stack **b, const char c)
@@ -135,5 +136,5 @@ void	sort(t_stack **a, t_stack **b, const char c)
 				rotate(a, 'a');
 		}
 	}
-	push_back(a, b);
+	push_back(a, b, sorted_array);
 }

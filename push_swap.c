@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 15:52:58 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 19:31:49 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,5 @@ int	main(int ac, char **av)
 	fill_stack(ac, av, &a);
 	if (!is_sorted(a))
 		check_cases(&a, &b);
-	free(a);
-	free(b);
+	while(1);
 }
