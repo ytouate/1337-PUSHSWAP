@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 14:07:57 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 15:52:58 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,14 @@
 
 void	check_cases(t_stack **a, t_stack **b)
 {
-	if (!is_sorted(*a))
-	{
-		if (stack_len(*a) == 3)
-			sort_three_ints(a, 'a');
-		else if (stack_len(*a) == 5)
-			sort_five(a, b);
-		else if (stack_len(*a) < 250)
-			sort(a, b, 'b');
-		else
-			sort(a, b, 'a');
-	}
-	exit(EXIT_SUCCESS);
+	if (stack_len(*a) == 3)
+		sort_three_ints(a, 'a');
+	else if (stack_len(*a) == 5)
+		sort_five(a, b);
+	else if (stack_len(*a) < 250)
+		sort(a, b, 'b');
+	else
+		sort(a, b, 'a');
 }
 
 void	bubble_sort(int *arr, int size)
@@ -84,7 +80,8 @@ int	main(int ac, char **av)
 	b = NULL;
 	check_args(ac, av);
 	fill_stack(ac, av, &a);
-	check_cases(&a, &b);
+	if (!is_sorted(a))
+		check_cases(&a, &b);
 	free(a);
 	free(b);
 }

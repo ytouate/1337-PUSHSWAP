@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:51:15 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 14:38:21 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 15:12:32 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	check_overflow(char **av, int i)
 	}
 }
 
-int	loop(char c)
+static int	loop(char c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

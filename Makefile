@@ -6,7 +6,7 @@
 #    By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 14:07:04 by ytouate           #+#    #+#              #
-#    Updated: 2022/02/21 14:28:57 by ytouate          ###   ########.fr        #
+#    Updated: 2022/02/21 15:11:23 by ytouate          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ BONUS = \
 	./libft_utils.c			\
 	./valid_stack.c			\
 	./stack_adt.c 			\
-	./valid_instractions.c	
+	./valid_instractions.c	\
+	./sorting_utils.c		\
 
 PARTS = $(BONUS) $(SRC_PART1)
 

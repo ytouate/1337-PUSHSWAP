@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:48:21 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 14:09:20 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 15:39:43 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	checker(t_stack **a)
 	t_stack	*b;
 	char	*instra;
 
+	b = NULL;
 	instra = get_next_line(1);
 	while (instra)
 	{
