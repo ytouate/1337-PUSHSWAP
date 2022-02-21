@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:48:17 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 15:44:55 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 15:57:46 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	reverse_rotate2(t_stack **a)
 
 void	combine(t_stack **a, t_stack **b, char *arg)
 {
-
 	if (ft_strcmp(arg, "rrr"))
 	{
 		reverse_rotate2(a);
