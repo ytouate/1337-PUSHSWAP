@@ -6,11 +6,11 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:01:46 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 09:49:30 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 11:33:41 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "puhs_swap.h"
+#include "push_swap.h"
 
 static char	*ft_strcpy(char *dst, const char *src)
 {

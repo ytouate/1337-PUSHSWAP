@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:38:19 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 10:51:48 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 11:32:33 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_stack
 void	swap2(t_stack **a);
 void	insert2(t_stack **a, t_stack **b);
 void	rotate2(t_stack	**a);
-void	reverse_rotate2(t_stack **a, char c);
+void	reverse_rotate2(t_stack **a);
 void	combine(t_stack **a, t_stack **b, char *arg);
 void	fill_stack(int ac, char **av, t_stack **a);
 void	change(int *x, int *y);
@@ -61,5 +61,5 @@ int		stack_top(t_stack *a);
 int		ft_strcmp(char *str, char *s);
 int		ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
-
+char	*get_next_line(int fd);
 #endif

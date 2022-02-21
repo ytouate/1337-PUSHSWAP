@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:51:15 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 10:47:33 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 12:13:21 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	check_args(int ac, char **av)
 
 	i = 0;
 	j = 0;
-	if (ac <= 2)
+	if (ac <= 1)
 		exit(EXIT_SUCCESS);
 	while (av[++i])
 	{

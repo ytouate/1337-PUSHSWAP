@@ -6,11 +6,13 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:03:04 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 10:10:43 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 11:33:30 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+#define BUFFER_SIZE 4
 
 char	*ft_get_line(char *buf)
 {

@@ -6,26 +6,11 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 10:56:43 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 12:14:29 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	stack_len(t_stack *a)
-{
-	int	len;
-
-	if (!a)
-		return (0);
-	len = 0;
-	while (a)
-	{
-		len ++;
-		a = a -> next;
-	}
-	return (len);
-}
 
 void	check_cases(t_stack **a, t_stack **b)
 {
@@ -96,9 +81,8 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
+
 	check_args(ac, av);
-	if (ft_strcmp(av[1], ""))
-		printf("ouuuuu\n");
 	fill_stack(ac, av, &a);
 	check_cases(&a, &b);
 	free(a);

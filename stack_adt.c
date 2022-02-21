@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:49:40 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/19 20:48:55 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 12:10:32 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,19 @@ int	stack_is_empty(t_stack *a)
 		return (0);
 	else
 		return (1);
+}
+
+int	stack_len(t_stack *a)
+{
+	int	len;
+
+	if (!a)
+		return (0);
+	len = 0;
+	while (a)
+	{
+		len ++;
+		a = a -> next;
+	}
+	return (len);
 }
