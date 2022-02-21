@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:51:15 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/19 20:48:29 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 09:55:18 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,25 @@ void	check_dup(int *arr, int size, int val)
 		}
 		i++;
 	}
+}
+
+void	fill_stack(int ac, char **av, t_stack **a)
+{
+	int		i;
+	int		*save;
+	int		j;
+
+	save = malloc(sizeof(int) * ac);
+	if (!save)
+		return ;
+	i = 0;
+	j = 0;
+	while (ac-- > 1)
+	{
+		check_dup(save, j, ft_atoi(av[ac]));
+		push(a, ft_atoi(av[ac]));
+		save[i++] = ft_atoi(av[ac]);
+		j++;
+	}
+	free(save);
 }

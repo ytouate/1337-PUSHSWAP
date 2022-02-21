@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:46:26 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/19 20:32:59 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 09:50:02 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,18 @@ size_t	ft_strlen(const char *s)
 	while (s[i])
 		i++;
 	return (i);
+}
+
+int	ft_strcmp(char *str, char *s)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] || s[i])
+	{
+		if (str[i] != s[i])
+			return (0);
+		i++;
+	}
+	return (1);
 }

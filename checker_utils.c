@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_manipulation.c                               :+:      :+:    :+:   */
+/*   checker_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 13:48:51 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 10:13:16 by ytouate          ###   ########.fr       */
+/*   Created: 2022/02/20 20:48:17 by ytouate           #+#    #+#             */
+/*   Updated: 2022/02/21 09:48:01 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack **a, char c)
+void	swap2(t_stack **a)
 {
 	int	x;
 	int	y;
@@ -25,15 +25,9 @@ void	swap(t_stack **a, char c)
 	pop(a);
 	push(a, x);
 	push(a, y);
-	if (c == 'a')
-		write(1, "sa\n", 3);
-	else if (c == 's')
-		return ;
-	else
-		write(1, "sb\n", 3);
 }
 
-void	insert(t_stack **a, t_stack **b, const char c)
+void	insert2(t_stack **a, t_stack **b)
 {
 	int	x;
 
@@ -42,13 +36,9 @@ void	insert(t_stack **a, t_stack **b, const char c)
 	x = stack_top(*b);
 	pop(b);
 	push(a, x);
-	if (c == 'a')
-		write(1, "pa\n", 3);
-	else
-		write(1, "pb\n", 3);
 }
 
-void	rotate(t_stack	**a, char c)
+void	rotate2(t_stack	**a)
 {
 	t_stack	*p;
 	t_stack	*head;
@@ -64,13 +54,9 @@ void	rotate(t_stack	**a, char c)
 		p = p ->next;
 	}
 	q = malloc(sizeof(t_stack));
-	q->val = val;
+	q ->val = val;
 	p->next = q;
-	q->next = NULL;
-	if (c == 'a')
-		write(1, "ra\n", 3);
-	if (c == 'b')
-		write(1, "rb\n", 3);
+	(q)-> next = NULL;
 }
 
 void	reverse_rotate(t_stack **a, char c)
@@ -95,4 +81,28 @@ void	reverse_rotate(t_stack **a, char c)
 		return ;
 	else
 		write(1, "rrb\n", 4);
+}
+
+void	combine(t_stack **a, t_stack **b, char *arg)
+{
+	if (ft_strcmp(arg, "rrr"))
+	{
+		reverse_rotate2(a);
+		reverse_rotate2(b);
+	}
+	else if (ft_strcmp(arg, "ss"))
+	{
+		swap2(a);
+		swap2(b);
+	}
+	else if (ft_strcmp(arg, "rr"))
+	{
+		rotate2(a);
+		rotate2(b);
+	}
+	else
+	{
+		write(2, "Error\n", 7);
+		exit(EXIT_FAILURE);
+	}
 }

@@ -6,7 +6,7 @@
 #    By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 14:07:04 by ytouate           #+#    #+#              #
-#    Updated: 2022/02/19 14:21:51 by ytouate          ###   ########.fr        #
+#    Updated: 2022/02/21 10:15:27 by ytouate          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC_PART1 =	\
 	./sorting_funcs.c		\
 	./stack_adt.c 			\
 	./stack_manipulation.c	\
-	./valid_stack.c
+	./valid_stack.c			\
+	./sorting_utils.c		\
 
 
 PARTS = $(SRC_PART1)
