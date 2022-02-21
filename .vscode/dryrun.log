@@ -1,0 +1,17 @@
+make: Entering directory `/Users/ytouate/Desktop/push_swap_tobepushed'
+cc -Wall -Werror -Wextra   -c -o stack_manipulation.o stack_manipulation.c
+cc -Wall -Werror -Wextra   -c -o checker.o checker.c
+cc -Wall -Werror -Wextra   -c -o checker_utils.o checker_utils.c
+cc -Wall -Werror -Wextra   -c -o get_next_line.o get_next_line.c
+cc -Wall -Werror -Wextra   -c -o get_next_line_utils.o get_next_line_utils.c
+cc -Wall -Werror -Wextra   -c -o libft_utils.o libft_utils.c
+cc -Wall -Werror -Wextra   -c -o valid_stack.o valid_stack.c
+cc -Wall -Werror -Wextra   -c -o stack_adt.o stack_adt.c
+cc -Wall -Werror -Wextra   -c -o valid_instractions.o valid_instractions.c
+cc -Wall -Werror -Wextra   -c -o sorting_utils.o sorting_utils.c
+cc -Wall -Werror -Wextra   -c -o push_swap.o push_swap.c
+cc -Wall -Werror -Wextra   -c -o sorting_funcs.o sorting_funcs.c
+ar -rc push_swap.a ./stack_manipulation.o ./checker.o ./checker_utils.o ./get_next_line.o ./get_next_line_utils.o ./libft_utils.o ./valid_stack.o ./stack_adt.o ./valid_instractions.o ./sorting_utils.o ./push_swap.o ./libft_utils.o ./sorting_funcs.o ./stack_adt.o ./stack_manipulation.o ./valid_stack.o ./sorting_utils.o
+cc -Wall -Werror -Wextra push_swap.c push_swap.a -o push_swap
+make: Leaving directory `/Users/ytouate/Desktop/push_swap_tobepushed'
+ 
