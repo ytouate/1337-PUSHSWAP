@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:38:19 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 11:32:33 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 14:10:23 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,9 @@ int		ft_strcmp(char *str, char *s);
 int		ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
 char	*get_next_line(int fd);
+void	check_swaps(t_stack **a, t_stack **b, char *instra);
+void	check_rotates(t_stack **a, t_stack **b, char *instra);
+void	check_pushes(t_stack **a, t_stack **b, char *instra);
+void	check_rev_rotates(t_stack **a, t_stack **b, char *instra);
+void	check_instraction(char *instra);
 #endif
