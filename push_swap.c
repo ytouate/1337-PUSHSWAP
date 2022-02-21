@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 10:42:41 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 10:56:43 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	check_cases(t_stack **a, t_stack **b)
 		else
 			sort(a, b, 'a');
 	}
+	exit(EXIT_SUCCESS);
 }
 
 void	bubble_sort(int *arr, int size)
@@ -100,4 +101,6 @@ int	main(int ac, char **av)
 		printf("ouuuuu\n");
 	fill_stack(ac, av, &a);
 	check_cases(&a, &b);
+	free(a);
+	free(b);
 }

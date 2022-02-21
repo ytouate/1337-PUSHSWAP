@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:48:17 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 09:48:01 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 10:49:57 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	rotate2(t_stack	**a)
 	(q)-> next = NULL;
 }
 
-void	reverse_rotate(t_stack **a, char c)
+void	reverse_rotate2(t_stack **a)
 {
 	t_stack	*p;
 	t_stack	*q;
@@ -75,12 +75,6 @@ void	reverse_rotate(t_stack **a, char c)
 	q -> next = NULL;
 	p -> next = *a;
 	*a = p;
-	if (c == 'a')
-		write(1, "rra\n", 4);
-	else if (c == 'r')
-		return ;
-	else
-		write(1, "rrb\n", 4);
 }
 
 void	combine(t_stack **a, t_stack **b, char *arg)
