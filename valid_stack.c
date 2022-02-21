@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:51:15 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 09:55:18 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 10:47:33 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,15 @@ void	check_args(int ac, char **av)
 
 	i = 0;
 	j = 0;
-	if (ac <= 1)
-		return ;
+	if (ac <= 2)
+		exit(EXIT_SUCCESS);
 	while (av[++i])
 	{
+		if (ft_strcmp(av[i], ""))
+		{
+			write(2, "Error\n", 7);
+			exit(EXIT_FAILURE);
+		}
 		check_overflow(av, i);
 		j = 0;
 		if (av[i][0] == '-' && (av[i][1] >= '0' && av[i][1] <= '9'))

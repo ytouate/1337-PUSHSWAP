@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 09:56:13 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/21 10:42:41 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	check_args(ac, av);
+	if (ft_strcmp(av[1], ""))
+		printf("ouuuuu\n");
 	fill_stack(ac, av, &a);
 	check_cases(&a, &b);
 }
