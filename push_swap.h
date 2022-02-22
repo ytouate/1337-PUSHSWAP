@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:38:19 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 14:10:23 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/22 14:49:27 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,11 @@ void	insert(t_stack **a, t_stack **b, char c);
 void	sort_five(t_stack **a, t_stack **b);
 void	check_args(int ac, char **av);
 void	sort(t_stack **a, t_stack **b, const char c);
-char	*ft_strjoin(char *s1, char const *s2);
+void	check_swaps(t_stack **a, t_stack **b, char *instra);
+void	check_rotates(t_stack **a, t_stack **b, char *instra);
+void	check_pushes(t_stack **a, t_stack **b, char *instra);
+void	check_rev_rotates(t_stack **a, t_stack **b, char *instra);
+void	check_instraction(char *instra);
 int		*insert_array(t_stack *a);
 int		pop(t_stack **a);
 int		stack_is_empty(t_stack *a);
@@ -60,11 +64,8 @@ int		get_index(t_stack *a, int val);
 int		stack_top(t_stack *a);
 int		ft_strcmp(char *str, char *s);
 int		ft_strchr(const char *s, int c);
-size_t	ft_strlen(const char *s);
 char	*get_next_line(int fd);
-void	check_swaps(t_stack **a, t_stack **b, char *instra);
-void	check_rotates(t_stack **a, t_stack **b, char *instra);
-void	check_pushes(t_stack **a, t_stack **b, char *instra);
-void	check_rev_rotates(t_stack **a, t_stack **b, char *instra);
-void	check_instraction(char *instra);
+char	*ft_strjoin(char *s1, char const *s2);
+size_t	ft_strlen(const char *s);
+
 #endif

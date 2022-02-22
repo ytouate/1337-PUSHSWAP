@@ -6,7 +6,7 @@
 #    By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 14:07:04 by ytouate           #+#    #+#              #
-#    Updated: 2022/02/21 15:11:23 by ytouate          ###   ########.fr        #
+#    Updated: 2022/02/22 09:37:07 by ytouate          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,8 +56,9 @@ re : fclean all
 OBBS = $(BONUS:.c=.o)
 
 $(B_NAME) : $(OBBS)
-	ar -rc push_swap.a $(OBBS)
+	@ar -rc push_swap.a $(OBBS)
 	@$(CC) $(CFLAGS) checker.c push_swap.a -o $(B_NAME)
+
 bonus : $(B_NAME)
 
 .PHONY : all clean fclean re bonus

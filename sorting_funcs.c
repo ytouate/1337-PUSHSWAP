@@ -6,12 +6,13 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:47:39 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 19:40:13 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/22 09:55:57 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* this function sorts stacks with 3 numbers lenght*/
 void	sort_three_ints(t_stack **a, char c)
 {
 	if (is_sorted(*a))
@@ -39,6 +40,7 @@ void	sort_three_ints(t_stack **a, char c)
 	}
 }
 
+/* this function sorts stacks with 5 numbers lenght*/
 void	sort_five(t_stack **a, t_stack **b)
 {
 	int	min;
@@ -68,6 +70,7 @@ void	sort_five(t_stack **a, t_stack **b)
 		insert(a, b, 'a');
 }
 
+/* this function checks if "val" exitst in "arr"*/
 int	n_exist(int *arr, int size, int val)
 {
 	int	i;
@@ -82,6 +85,8 @@ int	n_exist(int *arr, int size, int val)
 	return (0);
 }
 
+/*this function is used in the function below
+ to push the element into stack a again*/
 void	push_back(t_stack **a, t_stack **b, int *sorted_array)
 {
 	int	p;
@@ -110,6 +115,8 @@ void	push_back(t_stack **a, t_stack **b, int *sorted_array)
 	free(sorted_array);
 }
 
+/* this function is used to sort a stack with 
+a range of numbers that is more than 5*/
 void	sort(t_stack **a, t_stack **b, const char c)
 {
 	int		*sorted_array;

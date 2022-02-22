@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:48:21 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 15:39:43 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/22 13:52:45 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	checker(t_stack **a)
 		check_pushes(a, &b, instra);
 		instra = get_next_line(1);
 	}
+	while (*a)
+		*a = (*a)->next;
 	if (is_sorted(*a))
 		write(1, "OK\n", 3);
 	else
@@ -38,6 +40,7 @@ int	main(int ac, char **av)
 {
 	t_stack	*a;
 
+	a = NULL;
 	check_args(ac, av);
 	fill_stack(ac, av, &a);
 	checker(&a);

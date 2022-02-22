@@ -6,12 +6,14 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 19:31:49 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/22 14:47:47 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*this function check the range (lenght) of the 
+stack and call the approprita sorting function */
 void	check_cases(t_stack **a, t_stack **b)
 {
 	if (stack_len(*a) == 3)
@@ -51,6 +53,9 @@ void	bubble_sort(int *arr, int size)
 	}
 }
 
+/* this function insert the element of stack a into an
+ array and sorts them using the function "bubble sort"*/
+
 int	*insert_array(t_stack *a)
 {
 	int	*arr;
@@ -82,5 +87,6 @@ int	main(int ac, char **av)
 	fill_stack(ac, av, &a);
 	if (!is_sorted(a))
 		check_cases(&a, &b);
-	while(1);
+	while (a)
+		pop(&a);
 }
