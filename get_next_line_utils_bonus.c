@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:01:46 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 11:33:41 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/23 12:40:00 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ static char	*ft_strcpy(char *dst, const char *src)
 
 	saved = dst;
 	while (*src)
-	{
 		*dst++ = *src++;
-	}
 	*dst = '\0';
 	return (saved);
 }

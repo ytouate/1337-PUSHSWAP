@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:51:15 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/22 09:44:40 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/23 12:23:29 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ void	check_dup(int *arr, int size, int val)
 		{
 			write(2, "Error\n", 6);
 			free(arr);
-			system("leaks push_swap");
 			exit(EXIT_FAILURE);
 		}
 		i++;

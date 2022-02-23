@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:48:21 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/22 13:52:45 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/23 14:21:13 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ void	checker(t_stack **a)
 {
 	t_stack	*b;
 	char	*instra;
+	int		len1;
+	int		len2;
 
+	len1 = stack_len(*a);
 	b = NULL;
-	instra = get_next_line(1);
+	instra = get_next_line(0);
 	while (instra)
 	{
 		check_instraction(instra);
@@ -26,11 +29,11 @@ void	checker(t_stack **a)
 		check_rotates(a, &b, instra);
 		check_rev_rotates(a, &b, instra);
 		check_pushes(a, &b, instra);
-		instra = get_next_line(1);
+		free(instra);
+		instra = get_next_line(0);
 	}
-	while (*a)
-		*a = (*a)->next;
-	if (is_sorted(*a))
+	len2 = stack_len(*a);
+	if (is_sorted(*a) && len2 == len1)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
@@ -44,4 +47,6 @@ int	main(int ac, char **av)
 	check_args(ac, av);
 	fill_stack(ac, av, &a);
 	checker(&a);
+	while (a)
+		pop(&a);
 }

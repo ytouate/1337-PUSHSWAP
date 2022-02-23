@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:49:40 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 15:42:29 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/23 12:12:53 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	push(t_stack **a, int val)
 	t_stack	*temp;
 
 	temp = malloc(sizeof(t_stack));
+	if (!temp)
+		return ;
 	temp->next = NULL;
 	temp -> val = val;
 	if (!temp)

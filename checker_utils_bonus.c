@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:48:17 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 16:29:16 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/23 12:12:03 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	rotate2(t_stack	**a)
 	t_stack	*q;
 	int		val;
 
-	if (stack_len(*a) <= 2 || *a == NULL)
+	if (stack_len(*a) < 2 || *a == NULL)
 		return ;
 	head = *a;
 	*a = (*a)->next;
@@ -56,6 +56,8 @@ void	rotate2(t_stack	**a)
 		p = p ->next;
 	}
 	q = malloc(sizeof(t_stack));
+	if (!q)
+		return ;
 	q ->val = val;
 	p->next = q;
 	(q)-> next = NULL;
@@ -66,7 +68,7 @@ void	reverse_rotate2(t_stack **a)
 	t_stack	*p;
 	t_stack	*q;
 
-	if (!*a || stack_len(*a) <= 2)
+	if (!*a || stack_len(*a) < 2)
 		return ;
 	p = *a;
 	while (p->next)

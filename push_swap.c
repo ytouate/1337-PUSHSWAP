@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/22 14:47:47 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/23 16:05:45 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	bubble_sort(int *arr, int size)
 
 /* this function insert the element of stack a into an
  array and sorts them using the function "bubble sort"*/
-
 int	*insert_array(t_stack *a)
 {
 	int	*arr;

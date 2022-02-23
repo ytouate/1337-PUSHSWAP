@@ -6,7 +6,7 @@
 #    By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 14:07:04 by ytouate           #+#    #+#              #
-#    Updated: 2022/02/22 09:37:07 by ytouate          ###   ########.fr        #
+#    Updated: 2022/02/23 16:23:24 by ytouate          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,16 +24,16 @@ SRC_PART1 =	\
 	./sorting_utils.c		\
 
 BONUS = \
-	./stack_manipulation.c	\
-	./checker.c				\
-	./checker_utils.c		\
-	./get_next_line.c		\
-	./get_next_line_utils.c	\
-	./libft_utils.c			\
-	./valid_stack.c			\
-	./stack_adt.c 			\
-	./valid_instractions.c	\
-	./sorting_utils.c		\
+	./stack_manipulation.c			\
+	./checker_bonus.c				\
+	./checker_utils_bonus.c			\
+	./get_next_line_bonus.c			\
+	./get_next_line_utils_bonus.c	\
+	./libft_utils.c					\
+	./valid_stack.c					\
+	./stack_adt.c 					\
+	./valid_instractions.c			\
+	./sorting_utils.c				\
 
 PARTS = $(BONUS) $(SRC_PART1)
 
@@ -57,7 +57,7 @@ OBBS = $(BONUS:.c=.o)
 
 $(B_NAME) : $(OBBS)
 	@ar -rc push_swap.a $(OBBS)
-	@$(CC) $(CFLAGS) checker.c push_swap.a -o $(B_NAME)
+	@$(CC) $(CFLAGS) checker_bonus.c push_swap.a -o $(B_NAME)
 
 bonus : $(B_NAME)
 
