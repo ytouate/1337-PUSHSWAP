@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:48:17 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/24 12:07:18 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/24 14:17:10 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	combine(t_stack **a, t_stack **b, char *arg)
 
 /* all this function are the same as the ones used in the mandatory 
 part the only difference is these ones does not display the instraction used */
+
 void	swap2(t_stack **a)
 {
 	int	x;
@@ -84,7 +85,11 @@ void	rotate2(t_stack	**a)
 	}
 	q = malloc(sizeof(t_stack));
 	if (!q)
+	{
+		while (*a)
+			pop(a);
 		return ;
+	}
 	q ->val = val;
 	p->next = q;
 	(q)-> next = NULL;
