@@ -1,17 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_utils.c                                    :+:      :+:    :+:   */
+/*   checker_utils_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:48:17 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/23 12:12:03 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/24 12:07:18 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// include ss, rr and rrr without writing the instraction used to stdout
+void	combine(t_stack **a, t_stack **b, char *arg)
+{
+	if (ft_strcmp(arg, "rrr"))
+	{
+		reverse_rotate2(a);
+		reverse_rotate2(b);
+	}
+	else if (ft_strcmp(arg, "ss\n"))
+	{
+		swap2(a);
+		swap2(b);
+	}
+	else if (ft_strcmp(arg, "rr"))
+	{
+		rotate2(b);
+		rotate2(a);
+	}
+	else
+	{
+		write(2, "Error\n", 6);
+		exit(EXIT_FAILURE);
+	}
+}
+
+/* all this function are the same as the ones used in the mandatory 
+part the only difference is these ones does not display the instraction used */
 void	swap2(t_stack **a)
 {
 	int	x;
@@ -79,28 +106,4 @@ void	reverse_rotate2(t_stack **a)
 	q -> next = NULL;
 	p -> next = *a;
 	*a = p;
-}
-
-void	combine(t_stack **a, t_stack **b, char *arg)
-{
-	if (ft_strcmp(arg, "rrr"))
-	{
-		reverse_rotate2(a);
-		reverse_rotate2(b);
-	}
-	else if (ft_strcmp(arg, "ss\n"))
-	{
-		swap2(a);
-		swap2(b);
-	}
-	else if (ft_strcmp(arg, "rr"))
-	{
-		rotate2(b);
-		rotate2(a);
-	}
-	else
-	{
-		write(2, "Error\n", 6);
-		exit(EXIT_FAILURE);
-	}
 }

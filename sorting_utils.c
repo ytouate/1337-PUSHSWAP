@@ -6,12 +6,13 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 09:53:56 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/21 10:10:16 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/24 11:44:09 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* swaps the value of two ints */
 void	change(int *x, int *y)
 {
 	int	temp;
@@ -21,6 +22,7 @@ void	change(int *x, int *y)
 	*y = temp;
 }
 
+// checks if the stack a is already sorted
 int	is_sorted(t_stack *a)
 {
 	t_stack	*q;
@@ -39,6 +41,7 @@ int	is_sorted(t_stack *a)
 	return (1);
 }
 
+// gets the index of val inside a
 int	get_index(t_stack *a, int val)
 {
 	int	i;
@@ -54,6 +57,7 @@ int	get_index(t_stack *a, int val)
 	return (i);
 }
 
+// returns the min value of a
 int	get_min(t_stack *a)
 {
 	int		min;
@@ -70,6 +74,7 @@ int	get_min(t_stack *a)
 	return (min);
 }
 
+// returns the max value of a
 int	get_max(t_stack *a)
 {
 	int		max;

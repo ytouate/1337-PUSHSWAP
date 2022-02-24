@@ -6,7 +6,7 @@
 #    By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 14:07:04 by ytouate           #+#    #+#              #
-#    Updated: 2022/02/23 16:23:24 by ytouate          ###   ########.fr        #
+#    Updated: 2022/02/24 11:41:27 by ytouate          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ $(NAME) : $(OBJS)
 	@$(CC) $(CFLAGS) push_swap.c push_swap.a -o $(NAME)
 
 clean :
-	@rm -f $(OBJS) 
+	@rm -f $(OBJS) push_swap.a
 
 fclean : clean
 	@rm -f push_swap $(NAME) checker push_swap.a

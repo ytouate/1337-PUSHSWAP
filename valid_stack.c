@@ -6,12 +6,13 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:51:15 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/23 12:23:29 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/24 11:40:31 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// checks the int overflow
 void	check_overflow(char **av, int i)
 {
 	if ((ft_atoi(av[i]) == -1 || ft_atoi(av[i]) == 0) && ft_strlen(av[i]) >= 10)
@@ -21,6 +22,7 @@ void	check_overflow(char **av, int i)
 	}
 }
 
+// for the norm
 static int	loop(char c)
 {
 	if (c >= '0' && c <= '9')
@@ -32,6 +34,7 @@ static int	loop(char c)
 	}
 }
 
+// checks if the arguments are valid or not 
 void	check_args(int ac, char **av)
 {
 	int	i;
@@ -60,6 +63,7 @@ void	check_args(int ac, char **av)
 	}
 }
 
+// checks if there are any duplicates inside the stack
 void	check_dup(int *arr, int size, int val)
 {
 	int	i;
@@ -77,6 +81,7 @@ void	check_dup(int *arr, int size, int val)
 	}
 }
 
+// fills the stack a using the 2D array av passed to it
 void	fill_stack(int ac, char **av, t_stack **a)
 {
 	int		i;
@@ -85,7 +90,11 @@ void	fill_stack(int ac, char **av, t_stack **a)
 
 	save = malloc(sizeof(int) * ac);
 	if (!save)
-		return ;
+	{
+		while (*a)
+			pop(a);
+		exit(EXIT_FAILURE);
+	}
 	i = 0;
 	j = 0;
 	while (ac-- > 1)

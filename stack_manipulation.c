@@ -6,12 +6,13 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:48:51 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/23 12:13:12 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/24 11:35:31 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// swap a && swap  b
 void	swap(t_stack **a, char c)
 {
 	int	x;
@@ -33,6 +34,7 @@ void	swap(t_stack **a, char c)
 		write(1, "sb\n", 3);
 }
 
+// push a && push b (i take the from b and push into a)
 void	insert(t_stack **a, t_stack **b, const char c)
 {
 	int	x;
@@ -48,6 +50,7 @@ void	insert(t_stack **a, t_stack **b, const char c)
 		write(1, "pb\n", 3);
 }
 
+// the first element bacomes the last ra | rb
 void	rotate(t_stack	**a, char c)
 {
 	t_stack	*p;
@@ -77,6 +80,7 @@ void	rotate(t_stack	**a, char c)
 		write(1, "rb\n", 3);
 }
 
+// the last element becomes the first rra | rrb
 void	reverse_rotate(t_stack **a, char c)
 {
 	t_stack	*p;

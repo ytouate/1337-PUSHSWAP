@@ -6,7 +6,7 @@
 /*   By: ytouate <ytouate@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:54:52 by ytouate           #+#    #+#             */
-/*   Updated: 2022/02/23 21:05:30 by ytouate          ###   ########.fr       */
+/*   Updated: 2022/02/24 12:06:59 by ytouate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	check_cases(t_stack **a, t_stack **b)
 		sort(a, b, 'a');
 }
 
+/*sort an array using bubble_sort*/
 void	bubble_sort(int *arr, int size)
 
 {
